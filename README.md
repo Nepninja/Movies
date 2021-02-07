@@ -3,7 +3,7 @@
 movies is an app that consist of list of movies along with the description of them. 
 
 
-#Tutorial
+# Tutorial
 
  <div>
    <div align="left">
