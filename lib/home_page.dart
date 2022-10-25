@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class HomePage extends StatelessWidget {
   fetchMovies() async {
     var url;
-    url = await http.get(
+    url = await http.get(Uri.parse(
         "https://api.themoviedb.org/3/movie/now_playing?api_key=1500496dcaf1512b62894bd98ba83f9d&language=en-US");
     return json.decode(url.body)['results'];
   }
@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.hasError) {
               return Center(
-                child: Text(snapshot.error),
+                child: Text(snapshot.error.toString()),
               );
             }
             if (snapshot.hasData) {
